@@ -8,6 +8,10 @@ import './Messages.css';
 class Messages extends Component {
   componentDidMount() {
     this.props.getMessages();
+
+    setInterval(() => {
+      this.props.getMessages();
+    }, 3000)
   }
 
   postMessageHandler = async event => {
@@ -18,11 +22,7 @@ class Messages extends Component {
       message: this.props.messageText,
     };
 
-    await this.props.postMessage(data);
-
-    this.props.getMessages();
-
-    console.log(this.props.messages);
+    this.props.postMessage(data);
   };
 
   render() {

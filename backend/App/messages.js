@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
   if(req.body.author && req.body.message){
     filedb.addMessage(req.body)
   }else{
-    res.status(400).send('Wrong Data');
+    res.status(400).send(JSON.stringify({"error": "Author and message must be present in the request"}));
   }
 });
 

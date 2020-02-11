@@ -29,5 +29,4 @@ module.exports = {
     const fileContents = JSON.stringify(data, null, 2);
     fs.writeFileSync(fileName, fileContents);
   }
-}
-;
+};

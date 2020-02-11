@@ -10,8 +10,12 @@ export const getMessagesSuccess = (messages) => ({type: GET_MESSAGES_SUCCESS, me
 
 export const postMessage = (messageData) => {
   return async dispatch => {
-    await axiosOrders.post('/messages', messageData);
-    dispatch(getMessages());
+    try{
+      await axiosOrders.post('/messages', messageData);
+    }
+    catch(e){
+      console.log(e);
+    }
   }
 };
 
