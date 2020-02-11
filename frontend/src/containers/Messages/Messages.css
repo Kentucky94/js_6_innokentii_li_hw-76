@@ -1,0 +1,9 @@
+.messageInput {
+  border: 1px solid black;
+  display: block;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  background: #fff;
+  padding: 30px;
+}
